@@ -1,6 +1,16 @@
-# 📬 Maily - Email AI Agent
+# 📬 Maily - Autonomous Email AI Agent
 
-An autonomous executive assistant that connects to your Gmail, reads your unread emails, uses **Claude AI** to summarize and prioritize each one, and drafts high-quality replies directly into your **Gmail Drafts**.
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Chand0928%2Fmaily-blue?logo=github)](https://github.com/Chand0928/maily)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-brightgreen.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+An autonomous executive assistant that connects to your Gmail, reads your unread emails, uses **Claude 3.5 Sonnet** to summarize and prioritize each one, and drafts high-quality replies directly into your **Gmail Drafts**.
+
+🔗 **Live GitHub Repository:** [https://github.com/Chand0928/maily](https://github.com/Chand0928/maily)  
+📥 **Clone Command:**
+```bash
+git clone https://github.com/Chand0928/maily.git
+```
 
 > 🔒 **Safety Guarantee**: This agent **NEVER** sends emails automatically. It only creates drafts in your Gmail account for your personal review and approval.
 
@@ -62,24 +72,21 @@ maily/
 
 ---
 
-## 🚀 Step-by-Step Setup Guide
+## 🚀 How to Use (Quick Setup Guide)
 
 ### Step 1: Open the Project & Setup Environment
 
 ```bash
 # 1. Navigate to the project directory
-cd maily
+cd ~/Desktop/maily
 
-# 2. Create a virtual environment
-python3 -m venv venv
-
-# 3. Activate the virtual environment
+# 2. Activate the pre-configured virtual environment
 # On macOS/Linux:
 source venv/bin/activate
 # On Windows:
 # venv\Scripts\activate
 
-# 4. Install dependencies
+# 3. (Optional) If starting fresh, install dependencies:
 pip install -r requirements.txt
 ```
 
@@ -104,8 +111,8 @@ pip install -r requirements.txt
    - Name: `Maily Desktop Client`.
    - Click **Create**.
 7. Download the credentials:
-   - Click the **Download JSON** icon on the created client ID.
-   - Rename the downloaded file to `credentials.json` and place it in the root of this `maily/` directory.
+   - Click the **Download JSON** icon next to the created client ID.
+   - Rename the downloaded file to `credentials.json` and place it in the `maily/` directory.
 
 ---
 
@@ -114,16 +121,12 @@ pip install -r requirements.txt
 1. Sign up or log into [Anthropic Console](https://console.anthropic.com/).
 2. Navigate to **API Keys** and click **Create Key**.
 3. Copy your API key.
-4. Duplicate `.env.example` to create `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-5. Open `.env` and paste your key:
+4. Open the `.env` file inside `maily/`:
    ```env
-   ANTHROPIC_API_KEY=sk-ant-api03-...
+   ANTHROPIC_API_KEY=sk-ant-api03-your_actual_key_here
    CLAUDE_MODEL=claude-3-5-sonnet-20241022
    MAX_EMAILS=5
-   USER_NAME=YourName
+   USER_NAME=Vaibhav
    ```
 
 ---
@@ -151,22 +154,12 @@ python main.py
 
 ---
 
-### Step 6: Push to GitHub
-
-Ensure sensitive files are never pushed:
+### Step 6: Push Updates to GitHub
 
 ```bash
-# Check git status (credentials.json, token.json, and .env should NOT appear)
-git status
-
-# Initialize repository and commit
-git init
+cd ~/Desktop/maily
 git add .
-git commit -m "Initial commit: Autonomous Email AI Agent"
-
-# Link to your GitHub repository
-git branch -M main
-git remote add origin https://github.com/<your-username>/email-agent.git
+git commit -m "Update documentation and live links"
 git push -u origin main
 ```
 
@@ -174,12 +167,12 @@ git push -u origin main
 
 ### Step 7: Share on X (Twitter) / LinkedIn
 
-Record a quick 30-second screen capture or share a screenshot:
+Record a quick 30-second screen capture or screenshot:
 
 > **Suggested Post:**  
-> *"I built an autonomous AI email assistant using Python, the Gmail API, and Claude 3.5 Sonnet! 🤖✉️*  
-> *It reads unread emails, prioritizes urgent messages, and writes draft replies directly into Gmail Drafts (zero auto-sends).*  
-> *Check out the open-source code on GitHub: [link]"*
+> *"I built Maily — an autonomous AI email assistant using Python, Gmail API, and Claude 3.5 Sonnet! 🤖✉️*  
+> *It reads unread emails, detects urgency, and drafts replies straight into Gmail Drafts (zero auto-sends).*  
+> *Check out the open-source code on GitHub: https://github.com/Chand0928/maily"*
 
 ---
 
