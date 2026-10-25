@@ -60,10 +60,11 @@ Done! Processed 2 email(s):
 
 ```text
 maily/
-├── main.py          # Entry point: connects Gmail & Claude, orchestrates workflow
+├── app.py           # Streamlit Web UI: interactive browser dashboard
+├── main.py          # CLI runner: connects Gmail & Claude, orchestrates workflow
 ├── gmail_tools.py   # Gmail API integration: OAuth2 login, message parsing, drafts
 ├── agent.py         # AI intelligence: Claude prompt, priority classification, draft generation
-├── requirements.txt # Python dependencies
+├── requirements.txt # Python dependencies (including streamlit)
 ├── .env.example     # Template for environment configuration
 ├── .env             # Your local secret keys (NEVER commit to Git)
 ├── .gitignore       # Protects secret keys & auth tokens from being uploaded
