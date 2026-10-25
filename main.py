@@ -4,10 +4,13 @@ Runs the complete workflow:
 1. Connects to Gmail and reads unread emails
 2. Uses Claude AI to summarize, prioritize, and generate draft replies
 3. Saves draft replies directly in Gmail Drafts (never sends automatically)
+
+Supports --demo mode to test/preview without API keys.
 """
 
 import os
 import sys
+import time
 from dotenv import load_dotenv
 
 from gmail_tools import authenticate_gmail, get_unread_emails, create_draft_reply
@@ -25,8 +28,8 @@ def check_prerequisites():
         missing.append("- credentials.json (Download from Google Cloud Console)")
         
     api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
-    if not api_key or api_key == "your_anthropic_api_key_here":
-        missing.append("- ANTHROPIC_API_KEY in .env (Get one from https://console.anthropic.com/)")
+    if not api_key or api_key in ("your_anthropic_api_key_here", "sk-ant-api03-YourRealKeyHere12345", "sk-ant-api03-your_actual_key"):
+        missing.append("- ANTHROPIC_API_KEY in .env (Get your real key from https://console.anthropic.com/)")
 
     if missing:
         print("\n=======================================================")
@@ -35,12 +38,66 @@ def check_prerequisites():
         for item in missing:
             print(f" {item}")
         print("\nPlease follow the setup guide in README.md to configure them.")
+        print("\n💡 Want to preview Maily in action right now without API keys?")
+        print("   👉 Run: python main.py --demo")
         print("=======================================================\n")
         return False
     return True
 
 
+def run_demo_mode():
+    """Simulates the agent with realistic emails for demonstration and recording."""
+    print("=" * 60)
+    print("🤖  Maily - Email AI Agent (DEMO PREVIEW)")
+    print("=" * 60)
+    print("\n[1/3] 🔑 Authenticating with Gmail API...")
+    time.sleep(0.6)
+    print("  ✓ Gmail authenticated successfully. (Demo)")
+
+    print("\n[2/3] 🧠 Connecting to Claude AI...")
+    time.sleep(0.6)
+    print("  ✓ Claude AI initialized (Model: claude-3-5-sonnet). (Demo)")
+
+    print("\n[3/3] 📬 Fetching up to 3 unread emails...")
+    time.sleep(0.8)
+    print("  ✓ Found 2 unread email(s). Processing...\n")
+    print("-" * 60)
+
+    demo_emails = [
+        {
+            "from": "boss@company.com",
+            "summary": "Wants the quarterly budget report finalized by Friday.",
+            "priority": "URGENT",
+            "draft": "saved in Gmail Drafts"
+        },
+        {
+            "from": "newsletter@shop.com",
+            "summary": "Discount offer on apparel this weekend.",
+            "priority": "Low",
+            "draft": "skipped"
+        }
+    ]
+
+    for i, item in enumerate(demo_emails, start=1):
+        time.sleep(0.7)
+        print(f"{i}. From: {item['from']}")
+        print(f"   Summary: {item['summary']}")
+        print(f"   Priority: {item['priority']}")
+        print(f"   Draft reply: {item['draft']}\n")
+
+    print("-" * 60)
+    print("Done! Processed 2 email(s):")
+    print("• 1 draft reply(s) saved in Gmail Drafts")
+    print("• 1 email(s) skipped (newsletters/promos or FYI)")
+    print("\n🔒 Safety reminder: Nothing was sent. All drafts are waiting for your review in Gmail.")
+    print("=" * 60)
+
+
 def main():
+    if "--demo" in sys.argv:
+        run_demo_mode()
+        return
+
     print("=" * 60)
     print("🤖  Maily - Email AI Agent")
     print("=" * 60)
