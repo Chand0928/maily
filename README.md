@@ -1,12 +1,14 @@
 # 📬 Maily - Autonomous Email AI Agent
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chand0928-maily-app-7thqfn.streamlit.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Chand0928%2Fmaily-blue?logo=github)](https://github.com/Chand0928/maily)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-brightgreen.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An autonomous executive assistant that connects to your Gmail, reads your unread emails, uses **Claude 3.5 Sonnet** to summarize and prioritize each one, and drafts high-quality replies directly into your **Gmail Drafts**.
 
-🔗 **Live GitHub Repository:** [https://github.com/Chand0928/maily](https://github.com/Chand0928/maily)  
+🌐 **Try the Live Web App:** [https://chand0928-maily-app-7thqfn.streamlit.app/](https://chand0928-maily-app-7thqfn.streamlit.app/)  
+🔗 **GitHub Repository:** [https://github.com/Chand0928/maily](https://github.com/Chand0928/maily)  
 📥 **Clone Command:**
 ```bash
 git clone https://github.com/Chand0928/maily.git
@@ -173,7 +175,8 @@ Record a quick 30-second screen capture or screenshot:
 > **Suggested Post:**  
 > *"I built Maily — an autonomous AI email assistant using Python, Gmail API, and Claude 3.5 Sonnet! 🤖✉️*  
 > *It reads unread emails, detects urgency, and drafts replies straight into Gmail Drafts (zero auto-sends).*  
-> *Check out the open-source code on GitHub: https://github.com/Chand0928/maily"*
+> *Try the live web app: https://chand0928-maily-app-7thqfn.streamlit.app/*  
+> *Open-source code: https://github.com/Chand0928/maily"*
 
 ---
 
