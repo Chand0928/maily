@@ -1,4 +1,4 @@
-# 📬 Email AI Agent
+# 📬 Maily - Email AI Agent
 
 An autonomous executive assistant that connects to your Gmail, reads your unread emails, uses **Claude AI** to summarize and prioritize each one, and drafts high-quality replies directly into your **Gmail Drafts**.
 
@@ -12,7 +12,7 @@ When you run `python main.py`, it scans your inbox and outputs:
 
 ```text
 ============================================================
-🤖  Email AI Agent - Inbox Assistant
+🤖  Maily - Email AI Agent
 ============================================================
 
 [1/3] 🔑 Authenticating with Gmail API...
@@ -49,7 +49,7 @@ Done! Processed 2 email(s):
 ## 🗂️ Project Structure
 
 ```text
-email-agent/
+maily/
 ├── main.py          # Entry point: connects Gmail & Claude, orchestrates workflow
 ├── gmail_tools.py   # Gmail API integration: OAuth2 login, message parsing, drafts
 ├── agent.py         # AI intelligence: Claude prompt, priority classification, draft generation
@@ -64,11 +64,11 @@ email-agent/
 
 ## 🚀 Step-by-Step Setup Guide
 
-### Step 1: Clone & Setup Environment
+### Step 1: Open the Project & Setup Environment
 
 ```bash
-# 1. Clone your repository (or navigate to project directory)
-cd email-agent
+# 1. Navigate to the project directory
+cd maily
 
 # 2. Create a virtual environment
 python3 -m venv venv
@@ -88,24 +88,24 @@ pip install -r requirements.txt
 ### Step 2: Setup Gmail API Access (`credentials.json`)
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-2. Click **Select a project** > **New Project**, name it `Email-AI-Agent`, and click **Create**.
+2. Click **Select a project** > **New Project**, name it `Maily`, and click **Create**.
 3. In the sidebar, navigate to **APIs & Services** > **Library**.
 4. Search for **Gmail API** and click **Enable**.
 5. Configure the OAuth Consent Screen:
    - In the sidebar, click **OAuth consent screen**.
    - Select **External** and click **Create**.
-   - Fill in **App name** (e.g. `Email Agent`) and your email under **User support email** and **Developer contact information**.
+   - Fill in **App name** (e.g. `Maily`) and your email under **User support email** and **Developer contact information**.
    - Click **Save and Continue** through the scopes screen.
    - Under **Test users**, click **Add Users** and add your own Gmail address (the one you want the agent to read).
    - Click **Save and Continue**.
 6. Generate Credentials:
    - In the sidebar, click **Credentials** > **Create Credentials** > **OAuth client ID**.
    - Application type: **Desktop app**.
-   - Name: `Email Agent Desktop Client`.
+   - Name: `Maily Desktop Client`.
    - Click **Create**.
 7. Download the credentials:
    - Click the **Download JSON** icon on the created client ID.
-   - Rename the downloaded file to `credentials.json` and place it in the root of this `email-agent/` directory.
+   - Rename the downloaded file to `credentials.json` and place it in the root of this `maily/` directory.
 
 ---
 

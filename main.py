@@ -42,7 +42,7 @@ def check_prerequisites():
 
 def main():
     print("=" * 60)
-    print("🤖  Email AI Agent - Inbox Assistant")
+    print("🤖  Maily - Email AI Agent")
     print("=" * 60)
 
     if not check_prerequisites():
